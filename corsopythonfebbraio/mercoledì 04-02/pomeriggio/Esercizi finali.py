@@ -27,19 +27,20 @@ continua = True
 while scelta == "si":
      v = int(input('inserisci valore'))
      g.append(v)
+     scelta =input('vuoi continuare?')
+
 if len(g)==0:
             print("Lista vuota")
 else:
     massimo = g[0]
     for n in g:
             if n > massimo:
-             max = n
-            while n < len(g):
-                conteggio = 0
-                conteggio + 1
-                print("Numero massimo:", massimo)
-                print("Numero di elementi:", conteggio)
-                if scelta.lower() == 'no':
-                    continua = False
-                    scelta = input('vuoi continuare?')
-                    print('ciao')
+             massimo = n
+    
+    conteggio = 0
+           
+    while n < len(g):
+                conteggio += 1
+    print("Numero massimo:", massimo)
+    print("Numero di elementi:", conteggio)
+                
