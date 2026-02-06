@@ -3,3 +3,4 @@ TypeError: 'tuple' object does not support item assignment =trasforma tuple in l
 'tuple' object is not callable = devi usare [] e la poizione valore detro
    set4.remove(5)
 KeyError: 5 = 5 non c'è quindi non può toglierlo
+UnboundLocalError accade perché Python cerca la variabile tot dentro la funzione, ma non la trova perché è stata definita "fuori" (nell'ambiente globale)
