@@ -1,0 +1,42 @@
+3.Cos'è una collezione? Quali conosci e quali caratteristiche hanno?
+il comando collezione permette di salvare degli insieme in un punto specifico della memoria,hanno tre caratteristiche e in base a queste vengono divisi,le collezioni possono essere:miste,ordinate e modificabili.
+ci sono vari tipi di collezoini e sono:
+liste:ordinata,modificabile e mista
+tuple:non modificabili,ordinate e miste (si possono modificare solo durante la creazione o se trasformate in lista)
+insiemi:non ordinati,modificabili,miste
+
+5.Cos'è Python? quali caratteristiche ha?
+python è un linguaggio di programmazione interpretato,orientato agli oggetti,dinamico e ad alto livello.
+interpretato vuol dire che traduce e poi esegue il comando che è stato scritto.
+orientato agli oggetti vuol dire che rispetta le tre regole degli OOP:incapsulamento,polimorfismo ed ereditarietà,sono tutte attive contemporaneamente grazie all'astrazione.
+dinamico vuol dire che è 'dinamicamente tipizzato' cioè che ogni variabile può cambiare valore ma non possiamo dire che sia completamente dinamico perchè ogni variabile deve necessariamente avere associato un valore.
+alto livello vuol dire che è più vicino al linguaggio umano (naturale) a quello della macchina.
+
+7.Cos'è una variabile e da quali parti è definita? Quali categorie e tipi esistono di variabile?
+la variabile è un contenitore ed è composta dal nome della variabile,il suo valore associato e il tipo.
+sono divisi in basilari e non basilari:
+i basilari sono tutti i cpmandi che sono già all'interno come i nummeri interi,float,booleani e liste
+i non basilari sono invece gli oggetti e in generale tutto ciò che viene creato.
+le collezioni si possono considerare nel mezzo. 
+
+11.Cos'è SQL e a cosa serve?
+è un linguaggio di interrogazione usato per creare e gestire dati
+
+9.Cos'è una funzione? cosa dimostra implicitamente? Quali tipi ne esistono? cosa sono i parametri? e gli argomenti?
+le funzioni sono dei blocchi autonomi che eseguono il comando dato,si possono considerare la prova pratica dell'astrazione e sono modificabili da il programmattore e dal sistema stesso.
+i parametri sono dei place holder e non hanno una funzione attiva.
+l'argomento è il nome della funzione che stiamo creando,verrà poi salvata nel sistema e la potremo riutilizzare.
+le funzioni sono divise in funzioni con return e senza.
+quelle con il return sono associate a una variabile ed utilizzabili mentre quelle senza no
+
+13.Cos'è un operatore? Cosa cambia tra logico e aritmetico? Spiegami quelli che conosci
+l' operatore indica una operazone da compiere quelli aritmetici si occupano di far eseguire calcoli matematici (+,-,/,*)
+quelli logici sono quelli che indica il 'modo di pensare (and, or ,not)
+
+15.Cos'è il controllo di flusso? Quali famiglie abbiamo in questo capo e quali comandi appartengono a queste famiglie?
+il controllo di flusso permette di gestire le righe nel 'come,se e quando'
+sono divise in condizioni,cicli e funzioni
+nelle condizioni abbiamo 'if,elif,else e match'
+nei cicli abbiamo il ciclo for e while
+nelle funzioni abbiamo il comando 'def'
+

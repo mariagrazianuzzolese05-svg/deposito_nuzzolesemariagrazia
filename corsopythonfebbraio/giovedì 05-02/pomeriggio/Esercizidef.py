@@ -29,3 +29,5 @@ while n != numero_casuale:
         n = int(x)
         
 print('bingo')
+
+

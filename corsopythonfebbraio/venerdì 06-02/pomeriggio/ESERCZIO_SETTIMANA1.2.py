@@ -1,11 +1,8 @@
 #fare la spesa
-#ho chiesto a gemini di crearmi una traccia dove potessi usare tutti i comandi e lui l'ha scritta a punti
 
-#collezioni:crea lista
 listadellaspesa = ['pane','mele','latte']
 carrello =[]
 
-#decoratore:crea decoratore
 def decoratore(aggiungi_item):
     def wrapper():
         print('aggiungere al carrello')
@@ -13,24 +10,30 @@ def decoratore(aggiungi_item):
         print('aggiunta riuscita')
     return wrapper
 
-#funzione:crea funzione per aggiungere una parola alla lista
 @decoratore
-def aggiungi_item(*args):
+def aggiungi_item(nome:str):
     nuovo_prodotto =[]
     carrello.append(nuovo_prodotto) 
-#cicli:usa ciclo for e if
+
     for i in listadellaspesa:
         if i in listadellaspesa:
-#generatore:crea generatore che passi le parole della lista una per una
             yield carrello
-            print(carrello)
         else:
             print('non fa parte della lista')
     return aggiungi_item
 x = input('quale item stai prendendo dallo scaffale?')
 aggiungi_item()
+def decspesafatta(spesa_fatta):
+    def wrapper():
+        print('manca qualcosa?')
+        spesa_fatta()
+        print('spesa fatta')
+    return wrapper
 
-    
-
-
-    
+@decspesafatta 
+def spesa_fatta(*args):
+    a =input('spesa finita?') 
+    if args=='si':
+        print('spesa completata')
+spesa_fatta()
+ 
