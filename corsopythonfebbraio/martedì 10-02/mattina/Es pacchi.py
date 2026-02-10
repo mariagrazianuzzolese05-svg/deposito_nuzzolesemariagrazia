@@ -1,0 +1,64 @@
+'''Il sistema deve includere una classe Pacco con: 
+codice (stringa), peso (numero) e stato (es. "in magazzino",
+ "in consegna", "consegnato"), con un metodo per mostrare le
+   info e un metodo per cambiare stato.
+
+Deve esserci una classe Magazzino che contiene 
+una lista (o dizionario) di pacchi e permette di
+ aggiungere un pacco, cercarlo per codice, e mostrare 
+ tutti i pacchi in un certo stato.
+
+Deve esserci infine una classe GestorePacchi che usa il
+ magazzino per mettere un pacco “in consegna”, segnare un 
+ pacco come “consegnato” e calcolare il peso totale dei 
+ pacchi ancora non consegnati.
+
+Nel programma principale crea almeno 5 pacchi,
+inseriscili nel magazzino, cambia lo stato di alcuni pacchi
+ (almeno una consegna avviata e una consegna completata) 
+ e stampa: elenco pacchi “in magazzino”, elenco pacchi
+“in consegna” e il peso totale dei pacchi non ancora consegnati.'''
+
+class Pacco:
+    def __init__(self, codice:str,peso:int,stato:str):
+        self.codice=codice
+        self.peso=peso
+        self.stato=stato
+# metodo per mostrare le info
+    def vedi_info(self):
+        print('le info del pacco sono:',self.codice, self.peso,self.stato)
+#metodo per cambiare stato.
+    def cambia_stato(self):
+        c=input('vuoi cambiare stato?')
+        if c=='si':
+            cc=input('impostare nuovo stato')
+            match cc:
+                case 'in consegna':
+                    self.stato= 'in consegna'
+                    print('pacco stato cambiato in:',self.stato)
+                case 'in magazzino':
+                    self.stato= 'in magazzino'
+                    print('pacco stato cambiato in:',self.stato)
+                case 'consegnato':
+                    self.stato= 'consegnato'
+                    print('pacco stato cambiato in:',self.stato)
+#classe Magazzino 
+class Magazzino:
+    def __init__(self):
+        self.magazzino = {
+            "pacco1": {"codice": "aaaa", "peso": 1, "stato": "in magazzino"},
+            "pacco2": {"codice": "bbbb", "peso": 2, "stato": "in magazzino"},
+            "pacco3": {"codice": "cccc", "peso": 3, "stato": "in magazzino"},
+            "pacco4": {"codice": "dddd", "peso": 4, "stato": "in magazzino"},
+            "pacco5": {"codice": "eeee", "peso": 5, "stato": "in magazzino"},
+            }
+#aggiungere un pacco, cercarlo per codice, e mostrare 
+# #tutti i pacchi in un certo stato.''' 
+    def aggiungere_pacco(self):
+        nuovon=input("nome nuovo pacco")
+        nuovoc=input("codice nuovo pacco")
+        nuovop=input("peso nuovo pacco")
+        nuovos=input('stato nuovo pacco')
+        self.magazzino[nuovon] = {"codice": nuovoc, "peso": nuovop, "stato":nuovos}
+        print(nuovon,"aggiunto con peso",nuovop,"e",nuovos)
+
