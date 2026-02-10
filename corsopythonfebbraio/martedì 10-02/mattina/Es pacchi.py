@@ -62,3 +62,82 @@ class Magazzino:
         self.magazzino[nuovon] = {"codice": nuovoc, "peso": nuovop, "stato":nuovos}
         print(nuovon,"aggiunto con peso",nuovop,"e",nuovos)
 
+'''classe GestorePacchi che usa il
+ magazzino per mettere un pacco “in consegna”, segnare un 
+ pacco come “consegnato”'''
+class Gestore_Pacchi:
+    def __init__(self):
+        pass
+    def modifica_stato(self):
+        modificas=input('vuoi modificare stato?')
+        if modificas=='si':
+            qualep=input('quale pacco modificare stato')
+            match qualep:
+                case 'pacco1':
+                    opzione=input('in cosegna o consegnato')
+                    if opzione=='in consegna':
+ #Magazzino o altro?
+                        Magazzino.magazzino['pacco1'] = opzione
+                        print('pacco1 stato modificato in',opzione)
+                case 'pacco2':
+                    opzione=input('in cosegna o consegnato')
+                    if opzione=='in consegna':
+                        Magazzino.magazzino['pacco1'] = opzione
+                        print('pacco1 stato modificato in',opzione)
+                case 'pacco3':
+                    opzione=input('in cosegna o consegnato')
+                    if opzione=='in consegna':
+                        Magazzino.magazzino['pacco1'] = opzione
+                        print('pacco1 stato modificato in',opzione)
+                case 'pacco4':
+                    opzione=input('in cosegna o consegnato')
+                    if opzione=='in consegna':
+                        Magazzino.magazzino['pacco1'] = opzione
+                        print('pacco1 stato modificato in',opzione)
+                case 'pacco5':
+                    opzione=input('in cosegna o consegnato')
+                    if opzione=='in consegna':
+                        Magazzino.magazzino['pacco1'] = opzione
+                        print('pacco1 stato modificato in',opzione)
+# e calcolare il peso totale dei pacchi ancora non consegnati.
+    def calcolo_peso(self):
+        for i in Magazzino.magazzino['stato']:
+            if i in "consegnato" not in Magazzino.magazzino:
+                pesotot=sum(Magazzino.magazzino[i]["peso"])
+                print(pesotot)
+'''Nel programma principale crea almeno 5 pacchi,
+inseriscili nel magazzino, cambia lo stato di alcuni pacchi
+ (almeno una consegna avviata e una consegna completata) 
+ e stampa: elenco pacchi “in magazzino”, elenco pacchi
+“in consegna” e il peso totale dei pacchi non ancora consegnati.'''
+mag=Magazzino()
+gestore=Gestore_Pacchi
+pacchi=Pacco
+while True:
+    scelta=input('cosa vuoi fare')
+    match scelta:
+        case 'calcolo peso':
+            gestore.calcolo_peso()
+            altro=input('altro?')
+            if altro=='no':
+                break
+        case 'modifica stato':
+            gestore.modifica_stato()
+            if altro=='no':
+                break
+        case 'cambia stato':
+            pacchi.cambia_stato()
+            if altro=='no':
+                break
+        case 'aggiungere pacco':
+            mag.aggiungere_pacco()
+            if altro=='no':
+                break
+        case 'vedi info':
+            pacchi.vedi_info()
+            if altro=='no':
+                break
+
+
+
+

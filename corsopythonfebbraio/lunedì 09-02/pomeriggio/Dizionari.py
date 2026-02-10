@@ -42,3 +42,11 @@ if "telefono" not in persona:
 #calcoli
 '''qt=int(input('quanti ne vuoi'))
            prezzotot=negoz.catalogo[scelta]["prezzo"]*qt'''
+#ciclo2
+'''print("\n=== Ciclo sulle chiavi ===")
+for chiave in persona:
+    print(chiave)
+
+print("\n=== Ciclo sui valori ===")
+for valore in persona.values():
+    print(valore)'''
