@@ -1,0 +1,8 @@
+index error: list index out of range =siamo fuori dall'indice,non abbiamo un x chd corrisponde alla posizione 4
+TypeError: 'tuple' object does not support item assignment =trasforma tuple in lista
+'tuple' object is not callable = devi usare [] e la poizione valore detro
+   set4.remove(5)
+KeyError: 5 = 5 non c'è quindi non può toglierlo
+UnboundLocalError accade perché Python cerca la variabile tot dentro la funzione, ma non la trova perché è stata definita "fuori" (nell'ambiente globale)
+TypeError: Libro.__init__() missing 1 required positional argument: 'libro'=Questo errore si verifica perché nel tuo codice hai definito che ogni volta che crei un Libro, devi obbligatoriamente passargli un nome tra le parentesi, ma quando hai scritto libro1 = Libro(), le parentesi erano vuote.
+#errori che ho fatto:non mettere tra le parentesi le cose chieste dentro init e non aver messo init a  biblioteca e libro1.creazione no creazione ma libro a  riga 16
