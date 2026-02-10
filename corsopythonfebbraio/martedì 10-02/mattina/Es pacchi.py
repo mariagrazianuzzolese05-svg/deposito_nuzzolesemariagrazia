@@ -66,8 +66,9 @@ class Magazzino:
  magazzino per mettere un pacco “in consegna”, segnare un 
  pacco come “consegnato”'''
 class Gestore_Pacchi:
-    def __init__(self):
-        pass
+    def __init__(self, magazzino_da_usare):
+        self.mag=magazzino_da_usare
+
     def modifica_stato(self):
         modificas=input('vuoi modificare stato?')
         if modificas=='si':
@@ -101,9 +102,9 @@ class Gestore_Pacchi:
                         print('pacco1 stato modificato in',opzione)
 # e calcolare il peso totale dei pacchi ancora non consegnati.
     def calcolo_peso(self):
-        for i in Magazzino.magazzino['stato']:
-            if i in "consegnato" not in Magazzino.magazzino:
-                pesotot=sum(Magazzino.magazzino[i]["peso"])
+        for i in self.mag.magazzino:
+            if i in "consegnato" not in self.mag.magazzino:
+                pesotot=sum(self.mag[i]["peso"])
                 print(pesotot)
 '''Nel programma principale crea almeno 5 pacchi,
 inseriscili nel magazzino, cambia lo stato di alcuni pacchi
@@ -111,8 +112,10 @@ inseriscili nel magazzino, cambia lo stato di alcuni pacchi
  e stampa: elenco pacchi “in magazzino”, elenco pacchi
 “in consegna” e il peso totale dei pacchi non ancora consegnati.'''
 mag=Magazzino()
-gestore=Gestore_Pacchi
-pacchi=Pacco
+#aggiungere pacchi e trasformare in lista magazzino(da vedere questo)
+#fai main
+gestore=Gestore_Pacchi(mag)
+pacco6=Pacco('aaaa',2,'in magazzino')
 while True:
     scelta=input('cosa vuoi fare')
     match scelta:
@@ -123,18 +126,22 @@ while True:
                 break
         case 'modifica stato':
             gestore.modifica_stato()
+            altro=input('altro?')
             if altro=='no':
                 break
         case 'cambia stato':
-            pacchi.cambia_stato()
+            pacco6.cambia_stato()
+            altro=input('altro?')
             if altro=='no':
                 break
         case 'aggiungere pacco':
             mag.aggiungere_pacco()
+            altro=input('altro?')
             if altro=='no':
                 break
         case 'vedi info':
-            pacchi.vedi_info()
+            pacco6.vedi_info()
+            altro=input('altro?')
             if altro=='no':
                 break
 
