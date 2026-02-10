@@ -61,8 +61,24 @@ class Negozio:
             self.catalogo["articolo"]=p
             print('fatto')
 #l'analisi del negozio da parte degli amministratori.
+class Amministrazione:
+    def __init__(self):
+        self.guada=(100)
+        self.passwordadmin=(1111)
+    def registraadmin(self):
+        regist=int(input('che password creare'))
+        self.password(regist)
+        print('admin registrato')
+    def login(self):
+        log=int(input('inserisci password'))
+        if log==self.passwordadmin:
+            print('benvenuto')
+        else:
+            admin1.registraadmin()
+
+
     def visuallizza(self):
-        print(self.catalogo)
+        print(negoz.catalogo)
     
     def guadagno(self):
         print(self.guada)
@@ -103,12 +119,12 @@ class Utente:
 #Il sistema tiene traccia degli acquisti dei clienti. yield
 
 
-
+admin1=Amministrazione()
 negoz=Negozio()
 utente1=Utente()
 t=True
 while t==True:
-    x=input('sei un negozio o un utente')
+    x=input('sei un negozio o un utente o admin')
     if x=='negozio':
         cosa=input('cosa vuoi fare')
         match cosa:
@@ -118,10 +134,6 @@ while t==True:
                 negoz.rimuovi()
             case 'aggiorna':
                 negoz.aggiorna()
-            case 'visuallizza':
-                negoz.visuallizza()
-            case 'guadagno':
-                negoz.guadagno()
     elif x=='utente':
         utente1.logic()
         cosa=input('cosa vuoi fare')
@@ -130,6 +142,14 @@ while t==True:
                 utente1.visuallizza()
             case 'acquista':
                 utente1.acquista()
+    elif x=='admin':
+        cosa=input('cosa vuoi fare')
+        match cosa:
+            case 'visualizza catalogo':
+                admin1.visuallizza()
+            case 'vedi guadagno':
+                admin1.guada
+        
 
 
 
