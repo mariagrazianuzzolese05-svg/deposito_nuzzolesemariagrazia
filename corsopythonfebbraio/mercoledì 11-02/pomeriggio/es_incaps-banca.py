@@ -26,13 +26,17 @@ class Utente:
     def __init__(self,nometitolare,saldo):
         self.__nometitolare=nometitolare
         self.__saldo=saldo
-    def viewprivate(self):
-        get_nometitolareconto()
-        get__saldo()
+
+    def setsaldo(self,nuovosaldo):
+        self.saldo+=nuovosaldo
+    def getsaldo(self,nuovosaldo):
+        self.saldo=nuovosaldo
+        print(self.saldo)
+
 
 class Admin(Utente):
     def __init__(self, nometitolare, saldo):
-        super().__init__(nometitolare, saldo)()
+        super().__init__(nometitolare, saldo)
     def viewprivate(self):
         return super().viewprivate()
     
@@ -41,25 +45,21 @@ class Cliente(Utente):
         super().__init__(nometitolare, saldo)
     def viewprivate(self):
         return super().viewprivate()
-    def modifyprivate(self):
-            x=input('modificare in')
-            set_nometitolareconto(x)
-            print('modificato in',__nometitolareconto)
     
 class ContoBancario:
     def __init__(self,nometitolareconto):
         self.__nometitolareconto=nometitolareconto
 
-    def deposito(self):
-        importo=input('di quanto aggiugnere')
+    def deposito(self,nometitolareconto):
+        importo=int(input('quanto aggiungere'))
         if importo>0:
-         self.__saldo+=importo
-         print(self.__saldo,'totale')
+          nometitolareconto.setsaldo(importo)
+          print(self.__saldo,'totale')
         else:
             print('non valido')
     def preleva(self):
-        importo=input('di quanto togliere')
-        if importo>0,self.__saldo>0
+        importo=int(input('di quanto togliere'))
+        if importo<=self.__saldo:#però voglio il saldo da cliente
             self.__saldo-=importo
             print(self.__saldo)
         else:
@@ -69,10 +69,10 @@ cliente1=Cliente('mariagrazia',99999)
 admin1=Admin('paolo',100)
 conto=ContoBancario(cliente1)
 
-cliente1.modifyprivate()
-cliente1.viewprivate()
-conto.deposito()
-conto.preleva()
+cliente1.getsaldo(100)
+cliente1.setsaldo(100)
+conto.deposito(3)
+conto.preleva(10)
 
         
 
