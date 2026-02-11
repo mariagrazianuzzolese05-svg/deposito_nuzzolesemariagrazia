@@ -78,8 +78,8 @@ class Gestore_Pacchi:
                     opzione=input('in cosegna o consegnato')
                     if opzione=='in consegna':
  #Magazzino o altro?
-                        Magazzino.magazzino['pacco1'] = opzione
-                        print('pacco1 stato modificato in',opzione)
+                       mag.magazzino['pacco1'] = opzione
+                       print('pacco1 stato modificato in',opzione)
                 case 'pacco2':
                     opzione=input('in cosegna o consegnato')
                     if opzione=='in consegna':
@@ -102,10 +102,12 @@ class Gestore_Pacchi:
                         print('pacco1 stato modificato in',opzione)
 # e calcolare il peso totale dei pacchi ancora non consegnati.
     def calcolo_peso(self):
-        for i in self.mag.magazzino:
-            if i in "consegnato" not in self.mag.magazzino:
-                pesotot=sum(self.mag[i]["peso"])
-                print(pesotot)
+        pesotot = 0
+        for i in mag.magazzino:
+            y = mag.magazzino[i]
+            if  y ["stato"] != "consegnato":
+                pesotot +=mag.magazzino[i]["peso"]#importante devo mettere mag.mazzino
+        print(pesotot)
 '''Nel programma principale crea almeno 5 pacchi,
 inseriscili nel magazzino, cambia lo stato di alcuni pacchi
  (almeno una consegna avviata e una consegna completata) 
