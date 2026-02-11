@@ -71,8 +71,8 @@ conto=ContoBancario(cliente1)
 
 cliente1.getsaldo(100)
 cliente1.setsaldo(100)
-conto.deposito(3)
-conto.preleva(10)
+conto.deposito(cliente1)
+conto.preleva()
 
         
 
