@@ -31,7 +31,7 @@ class Prodotto:
         Prodotto.incremento()
 #calcola_profitto: restituisce la differenza tra il prezzo di vendita e il costo di produzione.
     def calcola_profitto(self):
-        return self.prezzo *(1- Prodotto.incremento)
+        return self.prezzo *(1- Prodotto.tassa.incremento)
 class Elettronica(Prodotto):
     def __init__(self, nome, costo_produzione, prezzo, garanzia):
         super().__init__(nome, costo_produzione, prezzo)
