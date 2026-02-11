@@ -34,6 +34,10 @@ conteggiopuntiA=0
 conteggiopuntiB=0
 squadraA=[]
 squadraB=[]
+assistA=[]
+assistB=[]
+allenatiriA=[]
+allenatiriB=[]
 
 class MembroSquadra:
     def __init__(self,nome:str, eta:int):
@@ -42,8 +46,7 @@ class MembroSquadra:
     def descrizione(self):
         print('il membro della sqyadra si chiama',self.nome,'e ha',self.eta)
     def formasquadra(self):
-        global squadraA
-        global squadraB
+        global squadraA, squadraB
 
         while True:
             F=input('creare squadra A o B')
@@ -55,82 +58,82 @@ class MembroSquadra:
                         altro=input('altro?')
                         if altro=='no':
                             print(squadraA)
-                        break
+                            break
                     case 'barella':
-                            squadraA.append(barella)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraA)
+                        squadraA.append(barella)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraA)
                             break
 
                     case 'buffon':
-                            squadraA.append(buffon)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraA)
+                        squadraA.append(buffon)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraA)
                             break
                             
                     case 'icardi':
-                            squadraA.append(icardi)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraA)
+                        squadraA.append(icardi)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraA)
                             break
 
                     case 'chiesa':
-                            squadraA.append(chiesa)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraA)
+                        squadraA.append(chiesa)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraA)
                             break
                     case 'puffon':
-                            squadraA.append(puffon)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraA)
+                        squadraA.append(puffon)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraA)
                             break
 
             elif F=='b':
                 sq=input('chi vuoi nella squadraB')
                 match sq:
                     case 'ballotelli':
-                        squadraA.append(balotelli)
+                        squadraB.append(balotelli)
                         altro=input('altro?')
                         if altro=='no':
                             print(squadraB)
                         break
                     case 'barella':
-                            squadraA.append(barella)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraB)
+                        squadraB.append(barella)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraB)
                             break
 
                     case 'buffon':
-                            squadraA.append(buffon)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraB)
+                        squadraB.append(buffon)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraB)
                             break
                             
                     case 'icardi':
-                            squadraA.append(icardi)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraB)
+                        squadraB.append(icardi)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraB)
                             break
 
                     case 'chiesa':
-                            squadraA.append(chiesa)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraB)
+                        squadraB.append(chiesa)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraB)
                             break
                     case 'puffon':
-                            squadraA.append(puffon)
-                            altro=input('altro?')
-                            if altro=='no':
-                                print(squadraB)
+                        squadraB.append(puffon)
+                        altro=input('altro?')
+                        if altro=='no':
+                            print(squadraB)
                             break
     
 
@@ -152,15 +155,12 @@ class Giocatore(MembroSquadra):
         print('inizia la partita')
         
     def rigore(self):
-        global conteggiopuntiA
+        global squadraA, squadraB
         print('rigore per infortunio e goal,un punto ad A')
         conteggiopuntiA+=1
         print(conteggiopuntiA)
     def infortunio(self):
-        global conteggiopuntiA
-        global conteggiopuntiB
-        global squadraA
-        global squadraB
+        global squadraA, squadraB
     
         x=input('chi si infortunia?')
         match x:
@@ -176,33 +176,46 @@ class Giocatore(MembroSquadra):
                     print('ahia,pun punto a B')
                 else:
                      conteggiopuntiB+=1
-                     print('un punto a B',conteggiopuntiB)
+                     print('un punto a B')
                   
                   
             case _:
                   print('non cambia niente')
                 
     def goal(self):
-        global conteggiopunti
+        global squadraA, squadraB
         t=input('uno dei giocatori tenta il goal,chi sarà?')
         match t:
              case 'ballotelli':
-                  conteggiopunti+=1
-                  print('fa goal',conteggiopunti)
+                  if balotelli in squadraA:
+                    conteggiopuntiA+=1
+                    print('goal per A')
+                  else:
+                     conteggiopuntiB+=1
+                     print('un punto a B')
              case 'barella':
-                  print('barella sbarella e missa')
+                  if barella in squadraA:
+                    conteggiopuntiA+=1
+                    print('goal per A')
+                  else:
+                     conteggiopuntiB+=1
+                     print('un punto a B')
              case 'puffon':
                   print('puffon non conosce le regole del calcio misa')
              case 'buffon':
                   print('buffon non farebbe mai una cosa così')
              case 'chiesa':
-                  conteggiopunti +=1
-                  print('un nome,una garanzia',conteggiopunti)
+                  if chiesa in squadraA:
+                    conteggiopuntiA+=1
+                    print('goal per A')
+                  else:
+                     conteggiopuntiB+=1
+                     print('un punto a B')
              case _:
                   print('mancato')
         
     def parata(self):
-         global conteggiopunti
+         global squadraA, squadraB
          p=input('stanno per tirare un goal,chi parerà')
          match p:
               case 'buffon':
@@ -212,6 +225,14 @@ class Giocatore(MembroSquadra):
                    print('perdono un punto',conteggiopunti)
               case _:
                    print('impossibile')
+    def vincita(self):
+         global squadraA, squadraB
+         if conteggiopuntiA>conteggiopuntiB:
+              print('squadra a vince')
+         elif conteggiopuntiB>conteggiopuntiA:
+              print('vince b')
+         elif conteggiopuntiA==conteggiopuntiB:
+              print('pareggio')
                    
                    
              
@@ -224,16 +245,52 @@ class Allenatore(MembroSquadra):
         self.anni_esperienza=anni_esperienza
         super().__init__(nome, eta)
     def dirige(self):
-        if self.anni_esperienza<5:
-            global conteggiopunti
+        global squadraA, squadraB
+        if allegri in allenatiriA:
             print('lascia da soli i giocatori e perdono due punti')
-            conteggiopunti -=2
-            print(conteggiopunti)
-        elif self.anni_esperienza>5:
-            global conteggiopunti
+            conteggiopuntiA -=2
+        elif allegri in allenatiriB:
+             print('lascia da soli i giocatori e perdono due punti')
+             conteggiopuntiB-=2
+             print(conteggiopuntiB)
+        elif conte in allenatiriA:
             print('con la sua saggiezza fa fare due goal')
-            conteggiopunti +=2
-            print(conteggiopunti)
+            conteggiopuntiA +=2
+            print(conteggiopuntiA)
+        elif conte in allenatiriB:
+             print('lascia da soli i giocatori e perdono due punti')
+             conteggiopuntiB-=2
+             print(conteggiopuntiB)
+    def all(self):
+         while True:
+            allena=input(('aggiungere a squadra A o B'))
+            if allena=='a':
+                 who=input('chi vuoi in a')
+                 if who=='allegri':
+                      allenatiriA.append(allegri)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print(squadraA)
+                        break
+                 elif who=='conte':
+                      allenatiriA.append(conte)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print(squadraA)
+                        break 
+            elif allena=='b':   
+                 if who=='allegri':
+                      allenatiriB.append(allegri)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print(squadraA)
+                        break
+                 elif who=='conte':
+                      allenatiriB.append(conte)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print(squadraA)
+                        break           
         
 
 '''Assistente:
@@ -244,16 +301,57 @@ class Assistente(MembroSquadra):
         self.specializzazione=specializzazione
         super().__init__(nome, eta)
     def fisio(self):
-        global conteggiopunti
-        print('fa un massaggio ha tutti e fanno un goal')
+        global squadraA, squadraB
+        if doc in assistA:
+            print('fa un massaggio ha tutti e fanno un goal')
+            conteggiopuntiA +=1
+            print(conteggiopuntiA)
+        elif log in assistB:
+            conteggiopuntiA +=1
+            print('fa un massaggio ha tutti e fanno un goal')
+            print(conteggiopuntiB)
         conteggiopunti +=1
         print(conteggiopunti)
     def analista(self):
-        global conteggiopunti
-        print("'l'analista analizza male e fa perdere un punto")
-        conteggiopunti -=1
-        print(conteggiopunti)
-
+        global squadraA, squadraB
+        if log in assistA:
+            print("'l'analista analizza male e fa perdere un punto")
+            conteggiopuntiA -=1
+            print(conteggiopuntiA)
+        elif log in assistB:
+            conteggiopuntiA -=1
+            print(conteggiopuntiB)
+            print("'l'analista analizza male e fa perdere un punto")
+    def assist(self):
+         while True:
+            assist=input(('aggiungere a squadra A o B'))
+            if assist=='a':
+                 who=input('chi vuoi in a')
+                 if who=='doc':
+                      assistA.append(doc)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print('fatto')
+                        break
+                 elif who=='log':
+                      assistA.append(log) 
+                      altro=input('altro?')
+                      if altro=='no':
+                        print('fatto')
+                        break 
+            elif assist=='b':   
+                 if who=='doc':
+                      assistB.append(doc)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print('fatto')
+                        break
+                 elif who=='log':
+                      assistB.append(log)
+                      altro=input('altro?')
+                      if altro=='no':
+                        print('fatto')
+                        break 
 allegri=Allenatore('allegri',40,3)
 conte=Allenatore('conte',54,10)
 
@@ -270,10 +368,14 @@ puffon=Giocatore('puffon',29,'portiere',38)
 
 def main():
      balotelli.formasquadra()
+     conte.all()
+     doc.assist()
      balotelli.gioca()
      balotelli.goal()
      balotelli.parata()
      doc.fisio()
+     log.analista()
+     balotelli.vincita()
 main()
 
 
