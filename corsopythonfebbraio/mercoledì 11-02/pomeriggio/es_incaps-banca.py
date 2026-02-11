@@ -42,7 +42,6 @@ class Cliente(Utente):
     def viewprivate(self):
         return super().viewprivate()
     def modifyprivate(self):
-        if _nometitolareconto is None:
             x=input('modificare in')
             set_nometitolareconto(x)
             print('modificato in',__nometitolareconto)
@@ -65,12 +64,15 @@ class ContoBancario:
             print(self.__saldo)
         else:
             print('non valido')
-    def visualizza(self):
-         print(self.__saldo)
 
 cliente1=Cliente('mariagrazia',99999)
 admin1=Admin('paolo',100)
 conto=ContoBancario(cliente1)
+
+cliente1.modifyprivate()
+cliente1.viewprivate()
+conto.deposito()
+conto.preleva()
 
         
 
