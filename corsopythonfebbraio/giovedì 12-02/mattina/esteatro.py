@@ -82,7 +82,7 @@ class PostoStandard(Posto):
         super().__init__(numero, fila, occupato)
     def getposto(self, nuovoposto, nuovafila,costo):
         self.__costo=costo
-        super().getposto(nuovoposto, nuovafila,costo)
+        super().getposto(nuovoposto, nuovafila)
     
 
 class PostoVip(PostoStandard):
@@ -104,7 +104,7 @@ aggiungi_posto(posto): per aggiungere un nuovo posto alla lista.
 prenota_posto(numero, fila): cerca nella lista il posto corrispondente al numero
  e alla fila indicati e, se lo trova, invoca il metodo prenota() sul posto.
 stampa_posti_occupati(): stampa tutti i posti che risultano occupati.'''
-class Teatro(Posto):#avrebbe più senso il contrario però ok
+class Teatro:
     def __init__(self,posti):
         self.__posti=posti
     def aggiungi(self,nuovoposto,nuovafila):
@@ -120,10 +120,13 @@ class Teatro(Posto):#avrebbe più senso il contrario però ok
             print(self.occupato)
         else:
             print('libero')
-    def setprenota(self, nuovoposto, nuovafila):
-        return super().setprenota(nuovoposto, nuovafila)
-'''
-prenota_posto(numero, fila): cerca nella lista il posto corrispondente al numero e alla fila indicati e, se lo trova,
+    def prenota(self, nuovoposto, nuovafila):
+        self.nuovoposto=nuovoposto
+        self.nuovafila=nuovafila
+        print(self.nuovoposto,self.nuovoposto,'prenotato')
+        
+
+'''prenota_posto(numero, fila): cerca nella lista il posto corrispondente al numero e alla fila indicati e, se lo trova,
  invoca il metodo prenota() sul posto.
 stampa_posti_occupati(): stampa tutti i posti che risultano occupati.'''
 puccini=Teatro(100)
@@ -133,4 +136,5 @@ postovip.setprenota(10,'f','bagnovip')
 posto1=PostoStandard(1,'a',False,2)
 posto1.getposto(1,'a',2)
 puccini.aggiungi(5,'d')
+puccini.prenota(1,'a')
         
