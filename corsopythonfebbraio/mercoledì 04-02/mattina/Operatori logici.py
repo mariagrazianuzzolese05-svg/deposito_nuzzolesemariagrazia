@@ -54,6 +54,7 @@ print(punto)
 info = ("alice", 25, "femmina")
 print(info)
 
+
 #indici tuple
 print(punto[0])
 print(info[2])

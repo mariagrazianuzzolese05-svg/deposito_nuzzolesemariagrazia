@@ -49,3 +49,8 @@ class Contatore:
     def mostra_numero_istanze(cls):
         print({cls.numero_istanze})
 c1=Contatore() 
+
+#to string
+def __str__(self):
+        # Viene richiamato quando facciamo: print(istanza_di_Persona)
+    return f"Persona(nome={self.nome}, eta={self.eta})"
