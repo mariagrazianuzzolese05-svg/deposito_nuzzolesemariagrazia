@@ -1,0 +1,4 @@
+nome,cognome,indirzzo
+tomaso,muraca,via roma
+giovanni,verdi,via milano
+teresa,verdi,via torino
