@@ -8,25 +8,27 @@ una chiave di 3, la lettera A diventerà D, la lettera B diventerà E e così vi
 Per decifrare un messaggio cifrato con il cifrario di Cesare bisogna
 conoscere la chiave utilizzata e spostare ogni lettera indietro di un numero
 di posti corrispondente alla chiave.'''
-parole=['ciao','gg','tutti']
+#parole=['ciao','gg','tutti']
 risultato = ""
 alfabeto='abcdefghijklmnopqrstuwxyz'
 parola=input('inserisci una parola:')
+scelta=input('decriptare o criptare')
 #index=0
 for lettera in parola:
     if lettera in alfabeto:
         posizione=alfabeto.index(lettera)
         #nuova_posizione = (posizione + 3) % len(alfabeto)
-        scelta=input('decriptare o criptare')
         if scelta=='criptare':
             #posizione+=3
             nuova_posizione = (posizione + 3) % len(alfabeto)
+            risultato += alfabeto[nuova_posizione]
         else:
              nuova_posizione = (posizione - 3) % len(alfabeto)        
              risultato += alfabeto[nuova_posizione]
-             print(risultato)
+            
     else:
         print("non c'è")
+print("Risultato finale:", risultato)
 
 '''while index<len(parole):
             if lettera[index] in alfabeto:  
