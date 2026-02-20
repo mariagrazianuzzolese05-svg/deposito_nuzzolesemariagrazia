@@ -66,6 +66,19 @@
                 "limber",
                 "regenerator"
             ]
+        },
+        {
+            "name": "wartortle",
+            "id": 8,
+            "height": 10,
+            "weight": 225,
+            "types": [
+                "water"
+            ],
+            "abilities": [
+                "torrent",
+                "rain-dish"
+            ]
         }
     ]
 }
