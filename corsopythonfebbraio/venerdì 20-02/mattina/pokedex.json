@@ -1,0 +1,71 @@
+{
+    "pokemon": [
+        {
+            "name": "eternatus",
+            "id": 890,
+            "height": 200,
+            "weight": 9500,
+            "types": [
+                "poison",
+                "dragon"
+            ],
+            "abilities": [
+                "pressure"
+            ]
+        },
+        {
+            "name": "croconaw",
+            "id": 159,
+            "height": 11,
+            "weight": 250,
+            "types": [
+                "water"
+            ],
+            "abilities": [
+                "torrent",
+                "sheer-force"
+            ]
+        },
+        {
+            "name": "pawmi",
+            "id": 921,
+            "height": 3,
+            "weight": 25,
+            "types": [
+                "electric"
+            ],
+            "abilities": [
+                "static",
+                "natural-cure",
+                "iron-fist"
+            ]
+        },
+        {
+            "name": "uxie",
+            "id": 480,
+            "height": 3,
+            "weight": 3,
+            "types": [
+                "psychic"
+            ],
+            "abilities": [
+                "levitate"
+            ]
+        },
+        {
+            "name": "toxapex",
+            "id": 748,
+            "height": 7,
+            "weight": 145,
+            "types": [
+                "poison",
+                "water"
+            ],
+            "abilities": [
+                "merciless",
+                "limber",
+                "regenerator"
+            ]
+        }
+    ]
+}
