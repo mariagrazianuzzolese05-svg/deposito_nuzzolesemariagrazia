@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "purrloin",
+        "esperienza": 56,
+        "massa": 101,
+        "altezza": 4
+    },
+    {
+        "nome": "dusknoir",
+        "esperienza": 236,
+        "massa": 1066,
+        "altezza": 22
+    }
+]
