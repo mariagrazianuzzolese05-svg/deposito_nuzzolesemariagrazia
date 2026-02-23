@@ -25,7 +25,7 @@ def incontrapokemon():
     url=f"https://pokeapi.co/api/v2/pokemon/{pokemon}"
     risposta=requests.get(url)
     dati = risposta.json()
-    print("\n--- HAI INCONTRATO", dati['name'].upper(), "!---") # Stampa qui!
+    print("\n--- HAI INCONTRATO", dati['name'].upper(), "!---")
     return dati
 
     #print("Esperienza base:", dati['base_experience'])
@@ -38,7 +38,7 @@ def run():
     return 'sei scappato da',datiglobali['name']
 def aggiungialpokedex():
     pokedex_attuale = file()
-    if pokedex_attuale is None: # Protezione se file() non restituisce nulla
+    if pokedex_attuale is None:
         pokedex_attuale = []
     nuovo_pokemon = {
         "nome": datiglobali['name'],
