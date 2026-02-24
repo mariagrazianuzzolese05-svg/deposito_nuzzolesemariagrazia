@@ -20,18 +20,59 @@ while True:
     with open("operazioninp.txt","w") as f:
         
         f.write(f"arr: {matrice}\n")
-        f.write(f"sum: {sotto_matrice}\n")
-        f.write(f"sum3: {trasposta}\n")
-        f.write(f"sum3: {somma}\n")
+        f.write(f"sottomatrice: {sotto_matrice}\n")
+        f.write(f"trasposta: {trasposta}\n")
+        f.write(f"somma: {somma}\n")
     with open("operazioninp.txt","r") as file:
         contenuto = file.read()
+        print(contenuto)
     scelta=input('uscire o creare nuova matrice?')
     if scelta=='uscire':
         break
     else:
         print('creare seconda matrice')
-        righe2=int(input('quante righe per nuova matrice'))
-        colonne2=it(input('quante colonne per nuova matrice))
+        #dim=input('stesse dimensioni?')
+        '''if dim=='no':
+            righe2=int(input('quante righe per nuova matrice'))
+            colonne2=int(input('quante colonne per nuova matrice'))
+            matrice2=np.random.rand(righe2,colonne2)'''
+       
+        matrice2=np.random.rand(righe,colonne)
+        moltiplica=np.multiply(matrice,matrice2)
+        #moltiplica=matrice*matrice2
+        media=np.mean(matrice2)
+        if righe==colonne:
+            print('matrice quadrata')
+            determinante=np.linalg.det(matrice2)
+            with open("operazioninp.txt","w") as f:
+        
+                f.write(f"arr: {matrice}\n")
+                f.write(f"sottomatrice: {sotto_matrice}\n")
+                f.write(f"trasposta: {trasposta}\n")
+                f.write(f"somma: {somma}\n")
+                f.write(f"moltiplicazione: {moltiplica}\n")
+                f.write(f"media: {media}\n")
+                f.write(f"det: {determinante}\n")
+            with open("operazioninp.txt","r") as file:
+                contenuto = file.read()
+                print(contenuto)
+        else:
+            with open("operazioninp.txt","w") as f:
+            
+                f.write(f"arr: {matrice}\n")
+                f.write(f"sottomatrice: {sotto_matrice}\n")
+                f.write(f"trasposta: {trasposta}\n")
+                f.write(f"somma: {somma}\n")
+                f.write(f"moltiplicazione: {moltiplica}\n")
+                f.write(f"media: {media}\n")
+                
+
+            with open("operazioninp.txt","r") as file:
+                contenuto = file.read()
+                print(contenuto)
+        scelta=input('uscire o creare nuova matrice?')
+        if scelta=='uscire':
+            break
 
 '''Parte DUE: Andare a specializzare per aggiungere nuove operazioni:
 Moltiplicazione Element-wise con un'altra Matrice: L'utente può scegliere di creare una 
@@ -39,5 +80,6 @@ seconda matrice delle stesse dimensioni della prima e moltiplicarle elemento per
 e stampare il risultato.
 Calcolo della Media degli Elementi della Matrice: Calcolare e stampare la media di tutti 
 gli elementi della matrice.
-'''
+EXTRA:
+Determinante della Matrice: Calcolare e stampare il determinante della matrice (solo se la matrice è quadrata).'''
 
