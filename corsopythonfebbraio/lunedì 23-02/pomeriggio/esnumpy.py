@@ -38,6 +38,7 @@ Stampa la matrice originale, la sotto-matrice centrale estratta, la matrice inve
  la diagonale principale e la matrice invertita modificata.'''
 import random
 matrice=np.random.randint(1, 101, size=(6, 6))
+#matrice = np.random.randint(1, 101, shape=(6, 6))
 print(matrice)
 sotto_matrice = matrice[1:5, 1:5]
 print(sotto_matrice)
@@ -49,4 +50,5 @@ print(diagonale)
 m = (matrice_invertita % 3 == 0)
 #boolean indexing
 matrice_invertita[m] = -1
+matrice_invertita[matrice_invertita % 3 == 0] = -1
 print(matrice_invertita)
