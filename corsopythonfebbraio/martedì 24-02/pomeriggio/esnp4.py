@@ -53,9 +53,6 @@ while True:
                 f.write(f"moltiplicazione: {moltiplica}\n")
                 f.write(f"media: {media}\n")
                 f.write(f"det: {determinante}\n")
-            with open("operazioninp.txt","r") as file:
-                contenuto = file.read()
-                print(contenuto)
         else:
             with open("operazioninp.txt","w") as f:
             
@@ -81,5 +78,6 @@ e stampare il risultato.
 Calcolo della Media degli Elementi della Matrice: Calcolare e stampare la media di tutti 
 gli elementi della matrice.
 EXTRA:
+
 Determinante della Matrice: Calcolare e stampare il determinante della matrice (solo se la matrice è quadrata).'''
 
