@@ -35,9 +35,9 @@ while True:
     arr = np.linspace(0,10,50)
     print(arr)
     matricer= np.random.random(50)
-    somma=arr+matricer
+    #somma=arr+matricer
     sum = np.add(arr, matricer)
-    print(somma,'somma')
+    #print(somma,'somma')
     print(sum,'sum')
     sum2 = np.sum(sum)
     print(sum2,'sum2')

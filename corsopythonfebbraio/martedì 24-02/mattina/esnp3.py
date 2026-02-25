@@ -33,7 +33,7 @@ Modificare gli elementi selezionati nel primo punto dell'esercizio aggiungendo 1
 arr=np.random.randint(1,5,size=(4,4))
 indici=[(0, 1), (1, 3), (2, 2),(3, 0)]
 print(arr[indici])
-indici_dispari = [[0, 2, 4]]
+indici_dispari = [1, 3]
 riga = arr[indici_dispari]
 print(riga)
 arr[indici] +=10

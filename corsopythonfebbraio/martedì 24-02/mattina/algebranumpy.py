@@ -1,6 +1,6 @@
 import numpy as np
 # Creazione di una matrice quadrata
-'''A = np.array([[1, 2], [3, 4]])
+A = np.array([[1, 2], [3, 4]])
 # Calcolo dell'inversa della matrice
 A_inv = np.linalg.inv(A)
 print("Inversa di A:\n", A_inv)
@@ -17,7 +17,7 @@ A = np.array([[3, 1], [1, 2]])
 B = np.array([9, 8])
 # Risoluzione del sistema di equazioni Ax = B
 x = np.linalg.solve(A, B)
-print("Soluzione x:", x)'''  # Output: [2. 3.]
+print("Soluzione x:", x)  # Output: [2. 3.]
 
 #Questa funzione calcola la Trasformata di Fourier Discreta (DFT) di un array.
 #  La DFT è uno strumento potente per analizzare le frequenze dei segnali.
@@ -30,3 +30,9 @@ fft_sig = np.fft.fft(sig)
 freqs = np.fft.fftfreq(len(fft_sig))
 print("Trasformata di Fourier:", fft_sig)
 print("Frequenze associate:", freqs)
+
+arr = np.array([1, 2, 3, 4])
+scalar = 10
+# Broadcasting aggiunge lo scalare a ogni elemento dell'array
+result = arr + scalar
+print(result)  # Output: [11 12 13 14]

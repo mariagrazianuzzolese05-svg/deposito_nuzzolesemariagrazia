@@ -96,6 +96,7 @@ print(arr[indices])  # Output: [10 30 50]
 
 import random
 matrice=np.random.randint(1, 101, size=(6, 6))
+matrice = np.random.randint(1, 101, shape=(6, 6))
 #matrice_invertita = sotto_matrice[::-1, :]
 #diagonale = np.diag(matrice_invertita)
 
