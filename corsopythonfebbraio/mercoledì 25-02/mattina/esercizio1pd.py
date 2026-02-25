@@ -24,7 +24,7 @@ dataset_persone = {
              "Paolo", "Lucia", "Piero", "Sara", "Enzo", "Rita", "Leo", "Gaia", "Vito", "Ilaria"],
     
     "Età": [24, 31, 45, 22, 56, 29, 38, 50, 19, 42, 
-            33, 27, 61, 35, 48, 26, 53, 21, 40, 30],
+            33, 27, 6, 77, 48, 26, 53, 21, 40, 30],
     
     "Città": ["Bari", "Milano", "Roma", "Napoli", "Torino", "Bari", "Milano", "Roma", "Napoli", "Bari",
               "Torino", "Milano", "Roma", "Bari", "Napoli", "Torino", "Milano", "Roma", "Bari", "Napoli"],
@@ -56,7 +56,9 @@ df['Salario'].fillna(df['Salario'].median(), inplace=True)
 #df_senior = df[df['Età'] > 65]
 #df_adult = df[df['Età'].between(19, 65)]
 #df_giovane = df[df['Età'] <= 18]
-df['senior'] = df['Età'] > 65
+'''df['senior'] = df['Età'] > 65
 df['adult'] = df['Età'].between(19, 65)
-df['giovane'] = df['Età'] <= 18
+df['giovane'] = df['Età'] <= 18'''
+df['Categoria Età'] = df['Età'].apply(lambda x: "Giovane" if x <= 18 else ("Adulto" if x <= 65 else "Senior"))
+df.to_csv('dataset_finito.csv', index=False)
 print(df)
