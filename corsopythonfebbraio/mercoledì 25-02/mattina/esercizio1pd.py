@@ -44,9 +44,15 @@ print(df.dtypes)
 media_salario = df['Salario'].mean()
 mediana_salario = df['Salario'].median()
 std_salario = df['Salario'].std()
+media_eta = df['Età'].mean()
+mediana_eta = df['Età'].median()
+std_eta= df['Età'].std()
 print('Media:',media_salario)
 print('Mediana:',mediana_salario)
 print('Deviazione Standard:',std_salario)
+print('Media:',media_eta)
+print('Mediana:',mediana_eta)
+print('Deviazione Standard:',std_eta)
 df = df.drop_duplicates()
 df_cleaned = df.dropna()
 #df['Età'] = df['Età'].fillna(df['Età'].median())
@@ -67,6 +73,12 @@ df['Categoria Età'] = df['Età'].apply(lambda x: "Giovane" if x <= 18 else ("Ad
         return "Adulto"
     else:
         return "Senior"'''
+'''# 1. Aggiunta della colonna "Categoria Età"
+# Definiamo i limiti: 0-18 (Giovane), 18-65 (Adulto), 65-120 (Senior)
+intervalli = [0, 18, 65, 120]
+etichette = ["Giovane", "Adulto", "Senior"]
+
+df['Categoria Età'] = pd.cut(df['Età'], bins=intervalli, labels=etichette)'''
 
 #df["Categoria Età"] = df["Età"].apply(categoria_eta)
 df.to_csv('dataset_finito.csv', index=False)
