@@ -60,5 +60,14 @@ df['Salario'].fillna(df['Salario'].median(), inplace=True)
 df['adult'] = df['Età'].between(19, 65)
 df['giovane'] = df['Età'] <= 18'''
 df['Categoria Età'] = df['Età'].apply(lambda x: "Giovane" if x <= 18 else ("Adulto" if x <= 65 else "Senior"))
+'''def categoria_eta(eta):
+    if eta <= 18:
+        return "Giovane"
+    elif eta <= 65:
+        return "Adulto"
+    else:
+        return "Senior"'''
+
+#df["Categoria Età"] = df["Età"].apply(categoria_eta)
 df.to_csv('dataset_finito.csv', index=False)
 print(df)
