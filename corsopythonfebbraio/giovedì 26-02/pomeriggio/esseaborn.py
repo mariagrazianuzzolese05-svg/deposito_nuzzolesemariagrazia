@@ -18,6 +18,8 @@ Applichi la normalizzazione min-max alle colonne altezza e peso.
 
 Stampa sia il DataFrame originale sia quello modificato per compararli.'''
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 data = {
     'altezza': [160, 175, 182, 168, 190, 155],
@@ -30,6 +32,29 @@ df = pd.DataFrame(data)
 df['altezza_Norm'] = (df['altezza'] - df['altezza'].min()) / (df['altezza'].max() - df['altezza'].min())
 df['peso_Norm'] = (df['peso'] - df['peso'].min()) / (df['peso'].max() - df['peso'].min())
 
-dfmodificato=pd.DataFrame(df['altezza_Norm'],df['peso_Norm'],df['età'])
-#rint(df)
+dfmodificato = pd.DataFrame({
+    'altezza_Norm': df['altezza_Norm'],
+    'peso_Norm': df['peso_Norm'],
+    'età': df['età']
+})
+print(df)
 print(dfmodificato)
+
+#scatterplot
+sns.scatterplot(data=dfmodificato, x='altezza_Norm', y='peso_Norm', hue='età')
+plt.title("dati normalizzati")
+plt.grid(True, linestyle='--')
+#plt.savefig("mio_grafico.png", dpi=300)
+plt.show()
+
+
+#kde
+sns.set_theme(style="darkgrid")
+plt.figure(figsize=(10, 6))
+sns.histplot(dfmodificato['altezza_Norm'], kde=True, color="skyblue", label="Altezza Norm", alpha=0.5)
+sns.histplot(dfmodificato['peso_Norm'], kde=True, color="orange", label="Peso Norm", alpha=0.5)
+plt.title('Distribuzione di Altezza e Peso Normalizzati')
+plt.xlabel('Valore Normalizzato [0, 1]')
+plt.ylabel('Frequenza')
+plt.legend()
+plt.show()

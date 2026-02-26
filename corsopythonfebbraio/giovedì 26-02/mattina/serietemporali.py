@@ -20,7 +20,7 @@ date_range = pd.date_range(start='2021-01-01',
 periods=10, freq='ME')
 df.index = date_range
 
-
+date_2024 = pd.date_range(start='2026-01-01', end='2026-12-31')
 # Resampling dei dati di una serie temporale
 
 df_resampled = df.resample('ME').mean()
