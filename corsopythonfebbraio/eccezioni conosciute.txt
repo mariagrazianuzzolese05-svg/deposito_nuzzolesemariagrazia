@@ -1,8 +1,19 @@
 index error: list index out of range =siamo fuori dall'indice,non abbiamo un x chd corrisponde alla posizione 4
+-----------------
 TypeError: 'tuple' object does not support item assignment =trasforma tuple in lista
+---------------------
 'tuple' object is not callable = devi usare [] e la poizione valore detro
    set4.remove(5)
 KeyError: 5 = 5 non c'è quindi non può toglierlo
+------------------------
 UnboundLocalError accade perché Python cerca la variabile tot dentro la funzione, ma non la trova perché è stata definita "fuori" (nell'ambiente globale)
+----------------
 TypeError: Libro.__init__() missing 1 required positional argument: 'libro'=Questo errore si verifica perché nel tuo codice hai definito che ogni volta che crei un Libro, devi obbligatoriamente passargli un nome tra le parentesi, ma quando hai scritto libro1 = Libro(), le parentesi erano vuote.
 #errori che ho fatto:non mettere tra le parentesi le cose chieste dentro init e non aver messo init a  biblioteca e libro1.creazione no creazione ma libro a  riga 16
+--------------------
+Il pandas.errors.EmptyDataError: No columns to parse from file ci sta dicendo, in termini fisici, che il tuo "rivelatore" (Pandas) ha provato a leggere un segnale dal file analisivendite.csv, ma ha trovato il vuoto assoluto.
+In pratica: il file esiste, ma è completamente vuoto (0 byte) oppure contiene solo spazi/invii che Pandas non riesce a interpretare come colonne.
+Perché succede? (Analisi delle cause)
+File creato ma non salvato: Magari hai creato il file analisivendite.csv sul desktop ma non hai scritto dentro i dati o non hai salvato le modifiche.
+Percorso errato: Stai puntando a un file nuovo e vuoto invece di quello dove hai inserito i dati.
+Errore di scrittura: Se hai creato il file tramite un altro script Python, quel processo potrebbe essersi interrotto prima di "scaricare" (flushing) i dati sul disco.
