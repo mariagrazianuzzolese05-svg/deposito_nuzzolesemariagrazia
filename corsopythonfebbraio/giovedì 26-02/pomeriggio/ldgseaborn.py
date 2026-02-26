@@ -32,8 +32,8 @@ giorni=np.arange(1,367)
 #print(giorni)
 nvisitatori=np.random.normal(2000,500,len(giorni))
 #print(nvisitatori)
-incremento=0.002
-nvisitatori=nvisitatori*(1+incremento*giorni).astype(int)
+incremento=0.1
+nvisitatori=nvisitatori*(1+incremento*giorni)
 '''df=pd.DataFrame({
     'giorni': giorni,
     'nvisitatori':nvisitatori
